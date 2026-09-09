@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Build site/index.html (deployable) from portfolio.html (the artifact source)."""
+"""Build index.html (what GitHub Pages serves) from src/portfolio.html (the source you edit)."""
 import os, re, sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-SRC  = os.path.join(ROOT, "portfolio.html")
-OUT  = os.path.join(ROOT, "site", "index.html")
+SRC  = os.path.join(ROOT, "src", "portfolio.html")
+OUT  = os.path.join(ROOT, "index.html")
 
 # Set this to your custom domain once you have one, e.g. "https://mairagupta.com"
 URL   = "https://mgacoding.github.io"
