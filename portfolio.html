@@ -1,0 +1,607 @@
+<title>Maira Gupta | Research portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --bg:#FFFFFF; --canvas:#F7F8FA; --soft:#F0F2F5;
+  --ink:#12161C; --ink2:#474F5A; --ink3:#7E8794;
+  --line:#E2E5EA; --line2:#C8CDD5;
+  --brand:#1D4E89; --brandsoft:#EBF1F8;
+  --pos:#12704F; --possoft:#E6F2ED;
+  --neg:#A8322F; --negsoft:#F8E9E8;
+  --xlgreen:#217346; --xlhead:#F2F2F2; --xlgrid:#D6DADE; --xlcell:#FFFFFF; --xlcalc:#EAF3EE; --xlink:#1A1A1A;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1216; --canvas:#0A0D10; --soft:#181C21;
+    --ink:#E9ECEF; --ink2:#A8B0B9; --ink3:#79828C;
+    --line:#232830; --line2:#343B44;
+    --brand:#6CA6DE; --brandsoft:#15222F;
+    --pos:#43BE8E; --possoft:#0E2620;
+    --neg:#DE8480; --negsoft:#2C1918;
+    --xlgreen:#2A8558; --xlhead:#22272D; --xlgrid:#363C44; --xlcell:#171C22; --xlcalc:#15271E; --xlink:#E4E8ED;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1216; --canvas:#0A0D10; --soft:#181C21;
+  --ink:#E9ECEF; --ink2:#A8B0B9; --ink3:#79828C;
+  --line:#232830; --line2:#343B44;
+  --brand:#6CA6DE; --brandsoft:#15222F;
+  --pos:#43BE8E; --possoft:#0E2620;
+  --neg:#DE8480; --negsoft:#2C1918;
+  --xlgreen:#2A8558; --xlhead:#22272D; --xlgrid:#363C44; --xlcell:#171C22; --xlcalc:#15271E; --xlink:#E4E8ED;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;
+}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line2)}
+.nav-in{max-width:820px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:16px;height:54px}
+.brand{font-weight:700;font-size:15px;letter-spacing:-.01em;white-space:nowrap}
+.brand em{font-style:normal;color:var(--ink3);font-weight:400}
+.tabs{display:flex;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{
+  font:inherit;font-size:14px;font-weight:500;color:var(--ink3);background:none;border:none;
+  padding:6px 12px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;margin-bottom:-1px;
+}
+.tabs button:hover{color:var(--ink2)}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--brand);font-weight:600}
+.tabs button:focus-visible{outline:2px solid var(--brand);outline-offset:-2px}
+
+.wrap{max-width:820px;margin:0 auto;padding:0 20px 72px}
+.panel[hidden]{display:none}
+
+h1{font-size:clamp(27px,4.6vw,34px);line-height:1.14;margin:0 0 12px;letter-spacing:-.02em;font-weight:700}
+h2{font-size:19px;margin:0 0 4px;letter-spacing:-.01em;font-weight:700}
+h3{font-size:22px;margin:0;letter-spacing:-.015em;font-weight:700}
+
+.hero{padding:38px 0 0;max-width:58ch}
+.hero p{color:var(--ink2);margin:0}
+.datenote{margin:20px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink3)}
+.datenote b{color:var(--ink2);font-weight:600}
+
+.secbar{display:flex;align-items:center;gap:12px;margin:36px 0 0}
+.arrows{margin-left:auto;display:flex;gap:6px}
+.arrows button{
+  width:30px;height:30px;border:1px solid var(--line2);background:var(--bg);color:var(--ink2);
+  cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;
+}
+.arrows button:hover{border-color:var(--brand);color:var(--brand)}
+.arrows button:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.hint{margin:4px 0 0;font-size:13.5px;color:var(--ink3)}
+
+/* cards */
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 0 6px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.card{
+  flex:0 0 clamp(256px,80vw,290px);scroll-snap-align:start;background:var(--bg);
+  border:1px solid var(--line2);padding:15px 16px;cursor:pointer;
+  text-align:left;font:inherit;color:inherit;display:flex;flex-direction:column;
+}
+.card:hover{border-color:var(--brand)}
+.card:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.chead{display:flex;align-items:baseline;gap:8px}
+.chead .tk{font-family:"IBM Plex Mono",monospace;font-size:16px;font-weight:600}
+.side{font-size:11px;font-weight:700;letter-spacing:.07em;margin-left:auto}
+.side.l{color:var(--pos)} .side.s{color:var(--neg)}
+.card .co{font-size:13px;color:var(--ink3);margin-top:2px;padding-bottom:11px;border-bottom:1px solid var(--line)}
+.card ul{margin:11px 0 0;padding:0;list-style:none;flex:1}
+.card li{font-size:13.5px;color:var(--ink2);padding:0 0 8px 12px;position:relative;line-height:1.48}
+.card li:last-child{padding-bottom:0}
+.card li::before{content:"";position:absolute;left:0;top:9px;width:5px;height:1.5px;background:var(--line2)}
+.card .more{margin-top:13px;font-size:13px;font-weight:600;color:var(--brand)}
+.dots{display:flex;gap:5px;justify-content:center;margin-top:12px}
+.dots i{width:5px;height:5px;background:var(--line2);display:block}
+.dots i.on{background:var(--brand);width:14px}
+
+/* glance list */
+.glance{margin-top:14px;border-top:1px solid var(--line2)}
+.grow{
+  display:grid;grid-template-columns:1fr auto auto;gap:2px 16px;align-items:baseline;
+  padding:12px 0;border-bottom:1px solid var(--line);
+}
+.grow .nm{font-weight:600}
+.grow .nm span{font-family:"IBM Plex Mono",monospace;color:var(--ink3);font-weight:500;font-size:13.5px;margin-right:8px}
+.grow .sd{font-size:12.5px;font-weight:700;letter-spacing:.05em}
+.grow .sd.l{color:var(--pos)} .grow .sd.s{color:var(--neg)}
+.grow .hz{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink3);white-space:nowrap}
+.grow .sub{grid-column:1/-1;font-size:13.5px;color:var(--ink3);margin-top:-2px}
+
+/* pitch */
+.pitch{padding-top:34px;margin-top:34px;border-top:2px solid var(--line2);scroll-margin-top:66px}
+.pitch:first-of-type{border-top:none;margin-top:20px;padding-top:0}
+.ptop{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ptop .tick{font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--ink3);font-weight:500}
+.ptop .sd{font-size:12px;font-weight:700;letter-spacing:.07em;margin-left:auto}
+.ptop .sd.l{color:var(--pos)} .ptop .sd.s{color:var(--neg)}
+.pmeta{
+  font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink3);
+  margin:10px 0 18px;padding-bottom:14px;border-bottom:1px solid var(--line);
+}
+.pmeta b{color:var(--ink2);font-weight:600}
+.pitch p{margin:0 0 14px;color:var(--ink2)}
+.pitch p b{color:var(--ink);font-weight:600}
+h4{
+  font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);
+  font-weight:700;margin:24px 0 11px;
+}
+ul.case{margin:0;padding:0;list-style:none;counter-reset:c}
+ul.case li{counter-increment:c;position:relative;padding:0 0 13px 26px;color:var(--ink2)}
+ul.case li:last-child{padding-bottom:0}
+ul.case li::before{
+  content:counter(c);position:absolute;left:0;top:0;font-family:"IBM Plex Mono",monospace;
+  font-size:12.5px;font-weight:600;color:var(--brand);
+}
+ul.case li b{color:var(--ink);font-weight:600}
+.framework{background:var(--soft);border:1px solid var(--line2);padding:18px 20px;margin:20px 0 6px}
+.framework h4{margin:0 0 10px;color:var(--brand)}
+.framework p{margin:0 0 11px;color:var(--ink2);font-size:15.5px}
+.framework p:last-child{margin-bottom:0}
+.framework b{color:var(--ink);font-weight:700}
+.variant{
+  background:var(--brandsoft);border-left:3px solid var(--brand);padding:12px 15px;
+  margin:0 0 18px;font-size:15.5px;color:var(--ink2);
+}
+.variant b{color:var(--brand);font-weight:700}
+.riskbox{border-left:2px solid var(--line2);padding-left:15px;margin-top:6px}
+.riskbox p{margin:0 0 10px;font-size:15px;color:var(--ink3)}
+.riskbox p:last-child{margin-bottom:0}
+.riskbox b{color:var(--ink2);font-weight:600}
+
+/* chart */
+figure.ch{margin:20px 0;padding:0;overflow-x:auto}
+figure.ch figcaption{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);font-weight:700;margin-bottom:12px}
+figure.ch svg{display:block}
+svg text{font-family:"IBM Plex Mono",monospace}
+
+/* data table */
+.tbl{margin:20px 0;border:1px solid var(--line2);overflow-x:auto}
+.tbl-cap{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-weight:700;padding:10px 13px;border-bottom:1px solid var(--line2);background:var(--soft)}
+table.dt{border-collapse:collapse;width:100%;min-width:340px;font-size:14.5px}
+table.dt td{border-bottom:1px solid var(--line);padding:8px 13px;color:var(--ink2)}
+table.dt tr:last-child td{border-bottom:none}
+table.dt td.v{text-align:right;font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;color:var(--ink);white-space:nowrap;width:1%}
+table.dt tr.calc td{background:var(--soft);color:var(--ink);font-weight:600}
+table.dt tr.calc td.v{color:var(--brand)}
+.tbl-note{font-size:13px;color:var(--ink3);padding:10px 13px;border-top:1px solid var(--line2);background:var(--soft);line-height:1.55}
+
+/* bench / about */
+.sec{padding-top:34px}
+.sec > p{color:var(--ink2);margin:10px 0 0;max-width:62ch}
+.list{margin:18px 0 0;padding:0;list-style:none}
+.list li{padding:14px 0;border-top:1px solid var(--line);color:var(--ink2);font-size:15px}
+.list li b{font-family:"IBM Plex Mono",monospace;color:var(--ink);font-weight:600}
+ol.how{margin:18px 0 0;padding-left:19px;color:var(--ink2)}
+ol.how li{margin-bottom:11px}
+ol.how li:last-child{margin-bottom:0}
+.about p{color:var(--ink2);margin:0 0 13px;max-width:62ch}
+.legal{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--ink3);line-height:1.62}
+.legal p{margin:0 0 11px;max-width:66ch}
+.legal p:last-child{margin-bottom:0}
+.legal b{color:var(--ink2);font-weight:600}
+
+@media (max-width:640px){
+  .wrap{padding:0 16px 56px}
+  .nav-in{padding:0 16px;gap:10px}
+  .tabs button{padding:6px 9px;font-size:13.5px}
+  h3{font-size:20px}
+  .grow{grid-template-columns:1fr auto}
+  .grow .hz{grid-column:2}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<nav class="nav">
+  <div class="nav-in">
+    <span class="brand">Maira Gupta <em>/ research portfolio</em></span>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="home">Book</button>
+      <button role="tab" aria-selected="false" data-tab="pitches">Pitches</button>
+      <button role="tab" aria-selected="false" data-tab="about">About</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ BOOK ============ -->
+<div class="panel" id="home" role="tabpanel">
+  <div class="hero">
+    <h1>Maira Gupta</h1>
+    <p>Junior at Cornell studying Applied Economics and Management at the Dyson School, double majoring in Statistics. This past summer I was a rotational analyst at a hedge fund, working across sector coverage, models and trade ideas.</p>
+    
+  </div>
+
+  <div class="secbar">
+    <h2>Current book</h2>
+    <div class="arrows"><button id="prev" aria-label="Previous">&#8249;</button><button id="next" aria-label="Next">&#8250;</button></div>
+  </div>
+  <p class="hint">Tap a card for the note.</p>
+
+  <div class="rail" id="rail">
+    <button class="card" data-go="p-amt">
+      <div class="chead"><span class="tk">AMT</span><span class="side l">LONG</span></div>
+      <div class="co">American Tower · 12–24 months</div>
+      <ul>
+        <li>Market is capitalising a trough print as the run rate. 230bp of the 1.7% is DISH churn that expires</li>
+        <li>The 65MHz SpaceX bought is terrestrial mid-band, and my read is it only pays off from the ground</li>
+        <li>If that spectrum gets redeployed, AMT can fund the build at 4.9× leverage and Crown Castle can't</li>
+      </ul>
+      <span class="more">Read the note &rarr;</span>
+    </button>
+    <button class="card" data-go="p-cci">
+      <div class="chead"><span class="tk">CCI</span><span class="side s">SHORT</span></div>
+      <div class="co">Crown Castle · 12–18 months</div>
+      <ul>
+        <li>Highest multiple in the group for a dividend the balance sheet is helping to fund</li>
+        <li>The $4.25 clears AFFO but not the $200m of capex behind it, leaving $380m of borrowing room</li>
+        <li>Highest multiple in US towers on the slowest growth, revenue guided down 5%</li>
+      </ul>
+      <span class="more">Read the note &rarr;</span>
+    </button>
+    <button class="card" data-go="p-intu">
+      <div class="chead"><span class="tk">INTU</span><span class="side l">LONG</span></div>
+      <div class="co">Intuit · 12–24 months</div>
+      <ul>
+        <li>Priced as an AI casualty, while QuickBooks Online Accounting revenue grew 23% last year</li>
+        <li>An agent can file a return. It cannot be the ledger an accountant, a bank and the IRS reconcile against</li>
+        <li>About 16× forward against a 30–40× history, with US business formation at a record</li>
+      </ul>
+      <span class="more">Read the note &rarr;</span>
+    </button>
+    <button class="card" data-go="p-panw">
+      <div class="chead"><span class="tk">PANW</span><span class="side s">SHORT</span></div>
+      <div class="co">Palo Alto Networks · 9–15 months</div>
+      <ul>
+        <li>80× forward earnings for guided earnings growth of 9%</li>
+        <li>Microsoft bundles the identity category Palo Alto just paid $25bn to enter</li>
+        <li>The 23% revenue growth is acquisition, CyberArk laps in Q3 FY27</li>
+      </ul>
+      <span class="more">Read the note &rarr;</span>
+    </button>
+    <button class="card" data-go="p-rhi">
+      <div class="chead"><span class="tk">RHI</span><span class="side s">SHORT</span></div>
+      <div class="co">Robert Half · 9–15 months</div>
+      <ul>
+        <li>Up 62% in three months on a recovery the volume data doesn't show</li>
+        <li>Hours worked −2.8% and placements −2.6%, while revenue rises on bill rates</li>
+        <li>25.8× forward implies about 45% earnings growth that has to come from volume</li>
+      </ul>
+      <span class="more">Read the note &rarr;</span>
+    </button>
+    <button class="card" data-go="p-fwonk">
+      <div class="chead"><span class="tk">FWONK</span><span class="side l">LONG</span></div>
+      <div class="co">Formula One Group · 12–24 months</div>
+      <ul>
+        <li>Q2 revenue fell 38% because four fewer races were held, which is a calendar effect</li>
+        <li>US media rights repriced from about $85m to about $150m, with team payments fixed through 2030</li>
+        <li>Not a cheap stock at about 24× OIBDA, so this rests on the estimate revision</li>
+      </ul>
+      <span class="more">Read the note &rarr;</span>
+    </button>
+    <button class="card" data-go="p-addyy">
+      <div class="chead"><span class="tk">ADDYY</span><span class="side l">LONG</span></div>
+      <div class="co">adidas ADR · 18–24 months</div>
+      <ul>
+        <li>Priced at 14.1× as a broken brand, while the highest-margin part of it compounds fastest</li>
+        <li>DTC grew 25% and is now 43% of revenue, with gross margin at 52.5%</li>
+        <li>The 18% drop was a profit miss on a €924m World Cup marketing bill, not a demand miss</li>
+      </ul>
+      <span class="more">Read the note &rarr;</span>
+    </button>
+  </div>
+  <div class="dots" id="dots" aria-hidden="true"></div>
+
+  <div class="sec">
+    <h2>At a glance</h2>
+    <div class="glance">
+      <div class="grow"><div class="nm"><span>AMT</span>American Tower</div><div class="sd l">LONG</div><div class="hz">12–24m</div><div class="sub">Opened 8 Sep at $175.85 · 15.9× AFFO</div></div>
+      <div class="grow"><div class="nm"><span>CCI</span>Crown Castle</div><div class="sd s">SHORT</div><div class="hz">12–18m</div><div class="sub">Opened 8 Sep at $75.83 · paired against AMT</div></div>
+      <div class="grow"><div class="nm"><span>INTU</span>Intuit</div><div class="sd l">LONG</div><div class="hz">12–24m</div><div class="sub">Opened 8 Sep at $332.70 · ~16× forward</div></div>
+      <div class="grow"><div class="nm"><span>PANW</span>Palo Alto Networks</div><div class="sd s">SHORT</div><div class="hz">9–15m</div><div class="sub">Opened 8 Sep at $333.26 · ~80× forward</div></div>
+      <div class="grow"><div class="nm"><span>RHI</span>Robert Half</div><div class="sd s">SHORT</div><div class="hz">9–15m</div><div class="sub">Opened 8 Sep at $42.58 · 37× trailing</div></div>
+      <div class="grow"><div class="nm"><span>FWONK</span>Formula One Group</div><div class="sd l">LONG</div><div class="hz">12–24m</div><div class="sub">Opened 8 Sep at $95.50 · ~24× EV/OIBDA</div></div>
+      <div class="grow"><div class="nm"><span>ADDYY</span>adidas ADR</div><div class="sd l">LONG</div><div class="hz">18–24m</div><div class="sub">Opened 8 Sep at $86.55 · 14.1× forward</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PITCHES ============ -->
+<div class="panel" id="pitches" role="tabpanel" hidden>
+
+<!-- AMT -->
+<div class="pitch" id="p-amt">
+  <div class="ptop"><h3>American Tower</h3><span class="tick">AMT</span><span class="sd l">LONG</span></div>
+  <p class="pmeta">Opened 8 Sep 2026 at <b>$175.85</b> &nbsp;·&nbsp; 12–24 months &nbsp;·&nbsp; 15.9× AFFO &nbsp;·&nbsp; 4.07% yield</p>
+
+  <p class="variant"><b>Key point:</b> the market is reading a trough print as the run rate, and reading Starlink as a threat when SpaceX has bought 65MHz of spectrum it can only monetise from the ground.</p>
+
+  <p>Organic tenant billings came in at 1.7% last quarter, the worst print in company history. Around 230bp of that is DISH decommissioning from earlier this year, which is contractual, dated, and does not point to weakening demand. Ex-DISH the portfolio runs near 4%. Those are organic tenant billings, which strips out straight-line revenue and other property income, so it is a different measure from segment revenue. Management has been direct that underlying AFFO/sh growth, before DISH and refinancing, is already around 7% against the 3% guided for the year.</p>
+
+  <p>On Starlink: SpaceX paid roughly $20bn for EchoStar's AWS-4, H-block and unpaired AWS-3, about 65MHz nationwide. While they focus on direct-to-cell and technology like femtocells, the constraints of physics make it unrealistic to run a carrier network from orbit. Direct-to-cell handles texts and basic calls where there is no coverage at all. It does not carry the traffic a real network carries, and it is not close. A satellite beam covers roughly 400 square miles against about one for a suburban macro cell, and cellular capacity comes almost entirely from reusing the same spectrum over and over in small areas. The spectrum they bought is mid-band terrestrial spectrum, licensed for ground use and largely unusable from orbit at the capacity a carrier needs, so my read is that the purchase only pays off as a terrestrial network. That is an inference from what they bought rather than something they have announced. If it is right, they need towers, and femtocells alone will not close the gap.</p>
+
+  <h4>The case</h4>
+  <ul class="case">
+    <li><b>DISH is not a demand problem.</b> It is contractual churn. Stripping it out shows portfolio growth at near 4%.</li>
+    <li><b>If that spectrum gets redeployed, AMT can fund the build and Crown Castle can't.</b> DISH hung AWS-4 and AWS H Block across more than 15,000 macro sites to hit its FCC milestones, and those leases sat on all three towercos, so redeployment alone doesn't discriminate. What discriminates is capacity to serve it. AMT runs 4.9× net leverage against a ≤5× target. Crown Castle is at 6.36× with roughly $380m of room and a dividend already consuming its cash. Build-to-suit for a new tenant is a capital commitment, potentially benefitting AMT.</li>
+    <li><b>5G is moving from coverage to capacity, which will start showing up in the revenue number as colocation rather than only amendments.</b> Management has said densification is increasingly arriving as new colocation applications. That is the better outcome for a towerco, because a colocation is a new tenant at full rent while an amendment is incremental equipment from someone already up there.</li>
+    <li><b>CoreSite is being undervalued by what the current multiple implies.</b> Data centre segment up 13.4% in Q2, more new business booked than in all of 2021, and Digital Realty trades at 23× FFO for that asset class. This is a high-growth vehicle inside the business.</li>
+  </ul>
+
+  <h4>Risks</h4>
+  <div class="riskbox">
+    <p>Latin America is running at −2% on Brazilian churn and has surprised twice. A consistent negative surprise there might make investors hesitant, particularly since the growth is now coming from outside the US: Africa and APAC grew 23.5% and Europe 10.9% last quarter, carrying a segment where Latin America is negative.</p>
+  </div>
+</div>
+
+<!-- CCI -->
+<div class="pitch" id="p-cci">
+  <div class="ptop"><h3>Crown Castle</h3><span class="tick">CCI</span><span class="sd s">SHORT</span></div>
+  <p class="pmeta">Opened 8 Sep 2026 at <b>$75.83</b> &nbsp;·&nbsp; 12–18 months &nbsp;·&nbsp; 18.4× EV/EBITDA &nbsp;·&nbsp; paired against AMT, dollar-neutral</p>
+
+  <p class="variant"><b>Key point:</b> the market treats the reset dividend as safe because it was just cut, and pays the highest multiple in the group for it. The $4.25 clears $4.59 of AFFO, but not the $200m of capex behind it, and there is $380m of borrowing room before the leverage ceiling. That is a premium multiple on a payout the balance sheet is funding.</p>
+
+  <p>Crown Castle owns the cleanest asset in the group, with around 40,000 macro sites, no currency exposure and three investment-grade tenants. The dividend is $4.25 against AFFO per share guidance of $4.59. That leaves about $145m retained, and they plan $200m of discretionary capex. Site rental revenue is guided down 5% for the year, organic contribution is 3.4%, and the stock trades at 18.4× EV/EBITDA against 16.5× for AMT and 16.7× for SBA. On price to AFFO the gap looks much smaller, $75.83 over $4.59 is 16.5× against 15.9× for AMT, but that is a leverage artefact: Crown Castle carries more debt, which compresses the equity multiple relative to the enterprise. Across three balance sheets this different, EV/EBITDA is the cleaner comparison.</p>
+
+  <div class="tbl">
+    <div class="tbl-cap">Dividend coverage after growth capital</div>
+    <table class="dt">
+      <tbody>
+        <tr><td>FY26 AFFO per share, guidance mid</td><td class="v">$4.59</td></tr>
+        <tr><td>Declared annual dividend</td><td class="v">$4.25</td></tr>
+        <tr class="calc"><td>Payout ratio</td><td class="v">92.6%</td></tr>
+        <tr><td>Retained AFFO</td><td class="v">$145m</td></tr>
+        <tr><td>Discretionary capex guidance</td><td class="v">$200m</td></tr>
+        <tr class="calc"><td>Shortfall</td><td class="v">−$55m</td></tr>
+        <tr><td>Net debt</td><td class="v">$17,099m</td></tr>
+        <tr><td>FY26 adjusted EBITDA</td><td class="v">$2,690m</td></tr>
+        <tr class="calc"><td>Net leverage</td><td class="v">6.36×</td></tr>
+        <tr><td>Stated target ceiling</td><td class="v">6.50×</td></tr>
+        <tr class="calc"><td>Debt capacity remaining</td><td class="v">$380m</td></tr>
+      </tbody>
+    </table>
+    <div class="tbl-note">Source: FY26 guidance and Q2 2026 disclosure.</div>
+  </div>
+
+  <h4>The case</h4>
+  <ul class="case">
+    <li><b>They already cut once, and set the new level against a revenue base that keeps shrinking.</b> That is the strongest objection to this short and I think it is also the answer. The $4.25 was set on an AFFO base lifted by a $165m reduction in interest expense following the fibre-sale debt paydown. That saving is permanent in the cost base, but it lifts AFFO once. 2027 gets no equivalent step down, so the payout has to be covered by a business whose revenue is still shrinking. Site rental revenue is guided down 5% this year. A payout of 92.6% against a declining top line and a non-recurring cost tailwind is the same problem one year later.</li>
+    <li><b>The obvious fix is cutting capex, and that makes it worse.</b> A bull says spend $145m instead of $200m and the gap closes. But that capex is land buyouts underneath their own towers and system investment, the things that protect ground-lease economics on a portfolio whose revenue is already declining. Underspending buys a year and raises the cost base later.</li>
+    <li><b>Highest multiple on the slowest growth.</b> Two turns of EV/EBITDA premium to AMT while revenue declines 5%. Asset quality justifies some premium. I don't think it justifies this one.</li>
+    <li><b>The capital allocation record is the worst in the sector.</b> Assembled fibre and small cells for well over $20bn, sold for $8.4bn, cut the dividend, reset to the towers they already owned in 2014.</li>
+  </ul>
+
+</div>
+
+<!-- INTU -->
+<div class="pitch" id="p-intu">
+  <div class="ptop"><h3>Intuit</h3><span class="tick">INTU</span><span class="sd l">LONG</span></div>
+  <p class="pmeta">Opened 8 Sep 2026 at <b>$332.70</b> &nbsp;·&nbsp; 12–24 months &nbsp;·&nbsp; ~16× forward on ~$20.80 EPS &nbsp;·&nbsp; −49% YTD</p>
+
+  <p class="variant"><b>Key point:</b> the market is pricing QuickBooks as an AI casualty. An agent can prepare a return. It cannot be the ledger that an accountant, a bank and the IRS all reconcile against.</p>
+
+  <p>Intuit is the worst performer in the S&amp;P 500 this year on the view that AI removes the need for tax and bookkeeping software. The stock is down 59% from its high and trades at roughly 16× forward, about $20.80 of forward EPS, against a 30–40× historical range. Over five years this worry may be reasonable. What the disclosed numbers show however is a business that is accelerating in exactly the segment where the bear case exists.</p>
+
+  <div class="tbl">
+    <div class="tbl-cap">FY2026 actuals, the segment the market is worried about</div>
+    <table class="dt">
+      <tbody>
+        <tr><td>Online Ecosystem revenue</td><td class="v">$9.9bn</td></tr>
+        <tr class="calc"><td>Growth</td><td class="v">+19%</td></tr>
+        <tr class="calc"><td>Growth ex-Mailchimp</td><td class="v">+23%</td></tr>
+        <tr class="calc"><td>QuickBooks Online Accounting revenue growth</td><td class="v">+23%</td></tr>
+        <tr><td>Global Business Solutions revenue</td><td class="v">$12.9bn</td></tr>
+        <tr class="calc"><td>Growth, ex-Mailchimp</td><td class="v">+18%</td></tr>
+        <tr><td>Online Services growth, ex-Mailchimp</td><td class="v">+21%</td></tr>
+        <tr><td>FY27 total revenue growth, guided</td><td class="v">9–10%</td></tr>
+      </tbody>
+    </table>
+    <div class="tbl-note">Source: Intuit FY2026 results and FY2027 guidance. Mailchimp is the acquired asset dragging the reported line. Strip it out and the core small-business franchise compounds in the low twenties.</div>
+  </div>
+
+  <h4>The case</h4>
+  <ul class="case">
+    <li><b>The moat is the ledger itself.</b> QuickBooks is the system of record an accountant, a bank and the IRS all reconcile against. Being displaced means every one of those parties agreeing to a different book at the same time. That is a structural position rather than a growth rate, which is why I would underwrite it forward and not just off last year's number.</li>
+    <li><b>The accountant channel functions as distribution.</b> Firms train on QuickBooks and carry client bases on it, so displacement has to go through them, which is slow.</li>
+    <li><b>The market has oversold the FY27 deceleration story.</b> The 9–10% guide is a whole-company number averaging three different businesses: Mailchimp, which is shrinking; the tax franchise, which is mature; and Global Business Solutions, which grew 18% ex-Mailchimp last year. A blended number coming down does not tell you the growing part is slowing. That is why I would watch QuickBooks Online Accounting.</li>
+    <li><b>The demand feeding it is at a record.</b> US business applications hit 578,926 in July and the first half was the largest on record. New businesses need books, payroll and payments before they need a return filed, so formation is the forward driver.</li>
+    <li><b>AI shows up as a positive.</b> 2.8m customers on Intuit's AI agents and 17% of headcount removed. Both support margin, and it is hard to argue a company is being displaced by a product it sells.</li>
+  </ul>
+</div>
+
+<!-- PANW -->
+<div class="pitch" id="p-panw">
+  <div class="ptop"><h3>Palo Alto Networks</h3><span class="tick">PANW</span><span class="sd s">SHORT</span></div>
+  <p class="pmeta">Opened 8 Sep 2026 at <b>$333.26</b> &nbsp;·&nbsp; 9–15 months &nbsp;·&nbsp; ~80× forward on $4.175 EPS</p>
+
+  <p class="variant"><b>Key point:</b> 80× forward earnings for the 9% earnings growth management itself is guiding to, with the acquisition producing the headline revenue number lapping in Q3 FY27.</p>
+
+  <p>Net revenue retention above 120% in the platformised cohort, RPO $21.2bn, adjusted FCF margin 38%, around 220 net new platformisations in Q4. Execution is good. FY27 guidance is management's own: revenue up 23–24%, non-GAAP EPS $4.16–4.19 against $3.84, so about 9%. Fourteen points between revenue growth and earnings growth, roughly four of which is share count going from ~815m to 844–847m. NGS ARR growth guided from 63% to 22–23%, and the 63% was CyberArk, which entered the base in February 2026.</p>
+
+  <h4>The case</h4>
+  <ul class="case">
+    <li><b>Microsoft bundles the category Palo Alto just paid $25bn to enter.</b> Entra ships inside enterprise agreements companies already sign, so it arrives at effectively no incremental cost. Selling identity against something a customer already has is a harder business than selling firewalls against Fortinet.</li>
+    <li><b>Eighty times forward earnings for 9% earnings growth.</b> Overpriced.</li>
+    <li><b>Reported growth is acquisition-driven.</b> CyberArk at $25bn, plus Chronosphere, Protect AI and IBM QRadar. Organic has run mid-teens and decelerating. Once it laps, the multiple has to justify itself on a much smaller number.</li>
+    <li><b>No margin expansion to grow into.</b> FY27 FCF margin guided flat at 38%, so earnings growth has to come from revenue, which on my assumptions will be lesser than expectations.</li>
+    <li><b>The bull's answer is free cash flow, and it deserves one.</b> Hold the 38% margin flat against 23–24% revenue growth and free cash flow grows 23–24% too; take off the 3.7% dilution and free cash flow per share compounds near 19%, against 9% on EPS. So the fair challenge is that I have picked the metric the acquisition distorts. My answer is that adjusted free cash flow adds back stock-based compensation, and stock-based compensation is the thing issuing the shares. The 815m to 845m share count and the addback are the same event counted once as a cost and once as a benefit. Strip that and the two measures converge toward the 9%.</li>
+  </ul>
+</div>
+
+<!-- RHI -->
+<div class="pitch" id="p-rhi">
+  <div class="ptop"><h3>Robert Half</h3><span class="tick">RHI</span><span class="sd s">SHORT</span></div>
+  <p class="pmeta">Opened 8 Sep 2026 at <b>$42.58</b> &nbsp;·&nbsp; 9–15 months &nbsp;·&nbsp; 37× trailing on $1.15 EPS, 25.8× forward &nbsp;·&nbsp; 5.86% yield paid as carry</p>
+
+  <p class="variant"><b>Key point:</b> the market is paying for a staffing recovery that does not appear in the volume data. Revenue is holding up on bill rates while placements keep falling.</p>
+
+  <p>The stock has run 62% in three months. The volume data tells a different story from the revenue line. In Q2, Contract Talent hours worked fell 2.8% year on year and permanent placement volumes fell 2.6%, while permanent placement revenue rose 2.9%. Revenue is stabilising on price and mix while fewer people are being placed. Q3 guidance of $1.31–1.41bn implies roughly flat adjusted revenue at the midpoint.</p>
+
+  <p>Underneath the cycle sits a structural problem. Robert Half's own survey work reports 35% of hiring managers placing greater emphasis on experienced over entry-level talent and 49% prioritising more strategic roles. A Harvard working paper covering 66 million workers across 280,000+ firms found entry-level hiring fell roughly 80% per quarter at firms adopting generative AI while senior hiring at those same firms kept growing. That figure is specific to AI-adopting firms rather than the whole economy, and it is a working paper rather than settled research, but the trend is consistent with entry-level postings being down about 35% since early 2023. Accounting, finance and administrative placement is the most automatable professional work there is, and it is the majority of what Robert Half does.</p>
+
+  <div class="tbl">
+    <div class="tbl-cap">Q2 2026, volumes against revenue</div>
+    <table class="dt">
+      <tbody>
+        <tr><td>Contract Talent hours worked, y/y</td><td class="v">−2.8%</td></tr>
+        <tr><td>Permanent placement volumes, y/y</td><td class="v">−2.6%</td></tr>
+        <tr class="calc"><td>Permanent placement revenue, y/y</td><td class="v">+2.9%</td></tr>
+        <tr><td>Contract Talent revenue</td><td class="v">$747m</td></tr>
+        <tr><td>Protiviti revenue, adjusted y/y</td><td class="v">−5%</td></tr>
+        <tr><td>Q2 diluted EPS</td><td class="v">$0.26</td></tr>
+        <tr><td>Trailing twelve-month EPS</td><td class="v">$1.15</td></tr>
+        <tr><td>Forward P/E implies EPS of</td><td class="v">~$1.65</td></tr>
+      </tbody>
+    </table>
+    <div class="tbl-note">Source: Q2 2026 results and Q3 guidance. Volumes down while revenue rises, with the gap coming from bill rate and mix.</div>
+  </div>
+
+  <h4>The case</h4>
+  <ul class="case">
+    <li><b>The recovery being priced does not appear in the volume data.</b> Hours worked and placement volumes are both still negative. Revenue stabilising on price is what a bottom looks like.</li>
+    <li><b>They can't simply move up to senior placement, and the numbers show them trying.</b> The obvious rebuttal is that Robert Half pivots to experienced hires, where fees are higher because perm fees are a percentage of first-year salary. Two problems. Senior and executive search is a different business, retained and relationship-led, dominated by Korn Ferry and Heidrick, and it is a fraction of the volume a branch-based staffing model needs to fill. And the shift is already visible: bill rates are up, volumes are down, and revenue still is not growing. The mix has moved and it has not rescued the top line.</li>
+    <li><b>The forward multiple assumes an earnings recovery that has to come from volume.</b> 25.8× forward implies about $1.65 of EPS against $1.15 trailing, roughly 45% earnings growth. That has to come from placements, and bill rates alone will not produce it. If volumes stay negative and EPS lands nearer $1.20–1.30, a normal 18–20× cyclical multiple puts this well below where it trades.</li>
+    <li><b>The structural driver hits their core niche hardest.</b> Accounting and finance placement is precisely the work being automated, and it is the majority of the business.</li>
+    <li><b>Protiviti is roughly a third of revenue and it is not staffing.</b> $471m in the quarter, down 5% adjusted with the US down 6%, and they have taken severance charges for $45m of annualised savings. The consulting arm that should offset a staffing trough is contracting alongside it.</li>
+  </ul>
+</div>
+
+<!-- FWONK -->
+<div class="pitch" id="p-fwonk">
+  <div class="ptop"><h3>Formula One Group</h3><span class="tick">FWONK</span><span class="sd l">LONG</span></div>
+  <p class="pmeta">Opened 8 Sep 2026 at <b>$95.50</b> &nbsp;·&nbsp; 12–24 months &nbsp;·&nbsp; ~24× EV/OIBDA &nbsp;·&nbsp; 23 races in 2026 against 24</p>
+
+  <p class="variant"><b>Key point:</b> Q2 revenue fell 38% because four fewer races were held in the quarter. That is a calendar effect, and estimates that extrapolate from it are wrong.</p>
+
+  <p>Q2 revenue fell 38% and adjusted OIBDA, meaning operating income before depreciation and amortisation, fell 61%, on four fewer races. Q1 revenue rose 53%, on one extra race. Nothing about the business changed between those prints. Across the full year the calendar is 23 races against 24, after Bahrain and Saudi Arabia were cancelled on the regional conflict and Malaysia was added in October, so the quarterly swings are mostly races moving between quarters rather than races disappearing. That costs a year of revenue without impairing the asset, and those circuits will want their slots back.</p>
+
+  <p>Meanwhile the contracts repriced upward. Apple pays roughly $150m a year for exclusive US rights from 2026 against about $85m under the old ESPN deal. The ninth Concorde Agreement is signed by all eleven teams and the FIA and runs commercially through 2030, so team payments are fixed and anything above that formula flows through. New sponsors include Standard Chartered, Marsh, FanDuel and Betway.</p>
+
+  <p>Worth saying plainly that this is not a cheap stock. Liberty's enterprise value is roughly $26.7bn against combined 2026 adjusted OIBDA near $1.09bn, covering F1 plus MotoGP, which did $92m of OIBDA in the first half. That is about 24×, a premium sports-rights multiple. What I am underwriting is the estimate revision as the calendar normalises, with the multiple holding where it is.</p>
+
+  <h4>The case</h4>
+  <ul class="case">
+    <li><b>The reported decline is a timing artefact and it self-corrects.</b> Revenue per race is the number that matters here. 2027 recovers the race, which is about 4% of volume before anything else happens.</li>
+    <li><b>US media rights repriced by roughly three quarters, and Europe renews next.</b> That is the clearest evidence F1's American audience growth is converting into money.</li>
+    <li><b>The cost base is fixed for five years.</b> With team payments contracted through 2030, incremental revenue converts to OIBDA at a high rate. FY25 showed it: revenue up 14%, adjusted OIBDA up 20%.</li>
+  </ul>
+</div>
+
+<!-- ADDYY -->
+<div class="pitch" id="p-addyy">
+  <div class="ptop"><h3>adidas</h3><span class="tick">ADDYY · ADR</span><span class="sd l">LONG</span></div>
+  <p class="pmeta">Opened 8 Sep 2026 at <b>$86.55</b> &nbsp;·&nbsp; 18–24 months &nbsp;·&nbsp; 14.1× forward &nbsp;·&nbsp; 52-week range $75–118</p>
+
+  <p class="variant"><b>Key point:</b> the stock is priced at 14.1× as though the brand is broken, while the highest-margin part of it is the part compounding fastest. Direct-to-consumer grew 25% and is now 43% of revenue, and gross margin reached 52.5%.</p>
+
+  <p>Q2 was a record. Revenue of €6.74bn beat the €6.58bn expected and grew 14% currency-neutral. Operating profit rose only 5% to €574m, because adidas spent €212m more on marketing than the same quarter last year as part of a €924m World Cup activation programme. EPS missed consensus by roughly 12%. Full-year revenue guidance went up to 9–10% currency-neutral while the operating profit target stayed at about €2.3bn, and the shares fell more than 18%, the steepest single-day decline since the 1995 listing.</p>
+
+  <p>The miss sat below the revenue line and above the gross line. Every underlying quality metric in the same quarter went the right way.</p>
+
+  <div class="tbl">
+    <div class="tbl-cap">Q2 2026 operating metrics</div>
+    <table class="dt">
+      <tbody>
+        <tr><td>Revenue, currency-neutral</td><td class="v">+14%</td></tr>
+        <tr class="calc"><td>Gross margin</td><td class="v">52.5%</td></tr>
+        <tr><td>DTC revenue growth</td><td class="v">+25%</td></tr>
+        <tr><td>E-commerce growth</td><td class="v">+26%</td></tr>
+        <tr><td>Own retail growth</td><td class="v">+21%</td></tr>
+        <tr><td>Wholesale growth</td><td class="v">+6%</td></tr>
+        <tr class="calc"><td>DTC share of sales</td><td class="v">43%</td></tr>
+        <tr><td>Inventory, y/y</td><td class="v">+12–13%</td></tr>
+        <tr><td>Inventory current or future season</td><td class="v">90%</td></tr>
+        <tr><td>Operating profit</td><td class="v">€574m</td></tr>
+        <tr class="calc"><td>Marketing spend increase, y/y</td><td class="v">€212m</td></tr>
+      </tbody>
+    </table>
+    <div class="tbl-note">Source: adidas Q2 2026 results. Gross margin expanded on full-price sell-through and channel mix. Wholesale grew slowly by design, with sell-in held back to protect full-price selling in a promotional European market.</div>
+  </div>
+
+  <h4>The case</h4>
+  <ul class="case">
+    <li><b>The profit miss is a quadrennial cost.</b> €924m of World Cup marketing, with €212m of the year-on-year increase landing in a single quarter. World Cups happen every four years, so the comparison resets on its own in 2027 without anything having to improve.</li>
+    <li><b>Every operating metric that signals demand quality improved.</b> Gross margin expanded to 52.5% on full-price sell-through, DTC grew 25%, and inventory is 90% current or future season. A business with a demand problem does not print those numbers in the same quarter it misses on profit.</li>
+    <li><b>The channel mix is structurally margin-accretive.</b> DTC is now 43% of sales and grew four times faster than wholesale. Own retail and e-commerce carry higher gross margin than wholesale, so every point of mix shift raises the margin floor. Wholesale growing only 6% is a deliberate choice to protect full-price selling rather than a demand signal.</li>
+    <li><b>The category backdrop is intact.</b> Global athleisure is around $460bn in 2026 and compounding near 9–10%, with the shift toward performance fabric worn outside sport still running. That is industry rather than company-specific, so it is context rather than the reason to own it, but it means the terrace slowdown is a silhouette cycle inside a growing category.</li>
+    <li><b>Netting 2027 honestly, both sides reverse in the same year.</b> The €924m World Cup programme does not repeat, which takes cost out. The roughly 13m incremental jerseys do not repeat either, which takes high-margin revenue out. On rough arithmetic those two largely offset, so 2027 is close to neutral on the tournament itself. That matters, because it means the case cannot rest on the marketing reversal. It rests on the DTC mix shift, a gross margin already running at 52.5%, and 14.1× forward.</li>
+    <li><b>The bad news has been taken twice.</b> Down 8% on guidance in March, then down 18% on the profit miss, leaving the shares near the bottom of a $75–118 range at 14.1× forward.</li>
+  </ul>
+
+  </div>
+
+</div>
+
+
+<!-- ============ ABOUT ============ -->
+<div class="panel" id="about" role="tabpanel" hidden>
+  <div class="sec about">
+    <h2>About</h2>
+    <p>I'm Maira, a junior at Cornell studying Applied Economics and Management at the Dyson School, double majoring in Statistics. I graduate in 2028.</p>
+      <p>This past summer I was a rotational analyst at a hedge fund, working across sector coverage, financial models and trade ideas. On campus, I'm president of Scholars of Finance, on the executive board of the Society for Women in Business, and a project member in the Algo Trading and FinTech clubs.</p>
+  </div>
+
+  <div class="sec">
+    <h2>Method</h2>
+    <div class="about">
+      <p>Some of these start with a company and some start with a view. American Tower came out of the industry. The structure of the business held up under the numbers. Robert Half came from a view on AI and entry-level hiring that I then had to find something tradable on.</p>
+      <p>From there it's the same work. I isolate the three to five factors that actually move the stock, compare them across the comp set and across time for the company itself, and take a view on where each one goes. A position exists only where that view differs materially from what's priced. Each one carries a time horizon.</p>
+      
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Disclosures</h2>
+    <div class="legal">
+      <p><b>Not advice.</b> This is a personal research exercise, published for discussion. It isn't investment advice, a recommendation, or an offer to buy or sell anything. Don't rely on it for a decision. Securities discussed may be unsuitable for you; do your own work and consider talking to a licensed adviser.</p>
+      <p><b>My own views.</b> Everything here is my personal opinion. It isn't associated with any current or former employer, no employer has reviewed or approved it, and nothing confidential or non-public from any employer went into it.</p>
+      <p><b>Accuracy.</b> Reference prices are as of the 8 September 2026 close. Figures come from company filings, guidance and earnings calls as of publication and may be out of date. Calculations are mine and may contain errors.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tabs button[data-tab]')),panels={};
+  tabs.forEach(function(t){panels[t.dataset.tab]=document.getElementById(t.dataset.tab);});
+  function show(name,anchor){
+    tabs.forEach(function(t){
+      var on=t.dataset.tab===name;
+      t.setAttribute('aria-selected',on?'true':'false');
+      if(panels[t.dataset.tab])panels[t.dataset.tab].hidden=!on;
+    });
+    if(anchor){var el=document.getElementById(anchor);if(el){el.scrollIntoView({block:'start'});return;}}
+    window.scrollTo(0,0);
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.tab);});});
+  document.querySelectorAll('.card[data-go]').forEach(function(c){
+    c.addEventListener('click',function(){show('pitches',c.dataset.go);});
+  });
+  var rail=document.getElementById('rail'),dots=document.getElementById('dots');
+  if(rail&&dots){
+    var n=rail.querySelectorAll('.card').length;
+    for(var i=0;i<n;i++){var d=document.createElement('i');if(i===0)d.className='on';dots.appendChild(d);}
+    function step(){var c=rail.querySelector('.card');return c?c.getBoundingClientRect().width+12:300;}
+    var pv=document.getElementById('prev'),nx=document.getElementById('next');
+    if(pv)pv.addEventListener('click',function(){rail.scrollBy({left:-step(),behavior:'smooth'});});
+    if(nx)nx.addEventListener('click',function(){rail.scrollBy({left:step(),behavior:'smooth'});});
+    var tk;rail.addEventListener('scroll',function(){
+      clearTimeout(tk);tk=setTimeout(function(){
+        var idx=Math.round(rail.scrollLeft/step()),ds=dots.children;
+        for(var j=0;j<ds.length;j++)ds[j].className=(j===idx?'on':'');
+      },60);
+    },{passive:true});
+  }
+})();
+</script>
