@@ -9,7 +9,13 @@ OUT  = os.path.join(ROOT, "index.html")
 # Set this to your custom domain once you have one, e.g. "https://mairagupta.com"
 URL   = "https://mgacoding.github.io"
 TITLE = "Maira Gupta | Research portfolio"
+# While the site is under review, keep it reachable by link but out of search.
+# Flip to False once you are cleared to publish, then rebuild and push.
+NOINDEX = True
+
 DESC  = "A long/short book, updated weekly. Seven positions, each with the numbers behind it."
+
+ROBOTS = '\n<meta name="robots" content="noindex, nofollow">' if NOINDEX else ""
 
 src = open(SRC).read()
 src = src.replace('<style>\n:root{', '<style>\nhtml,body{margin:0}\n:root{', 1)
@@ -20,7 +26,7 @@ head = f'''<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{DESC}">
-<meta name="author" content="Maira Gupta">
+<meta name="author" content="Maira Gupta">{ROBOTS}
 <link rel="canonical" href="{URL}/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Maira Gupta">
