@@ -7,7 +7,7 @@ SRC  = os.path.join(ROOT, "src", "portfolio.html")
 OUT  = os.path.join(ROOT, "index.html")
 
 # Set this to your custom domain once you have one, e.g. "https://mairagupta.com"
-URL   = "https://mgacoding.github.io"
+URL   = "https://mairagupta.me"
 TITLE = "Maira Gupta | Research portfolio"
 # While the site is under review, keep it reachable by link but out of search.
 # Flip to False once you are cleared to publish, then rebuild and push.

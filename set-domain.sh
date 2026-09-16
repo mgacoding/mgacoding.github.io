@@ -8,11 +8,13 @@ DOMAIN="${1:?usage: ./set-domain.sh <domain>}"
 cd "$(dirname "$0")"
 
 echo "Checking DNS for $DOMAIN ..."
-if ! host "$DOMAIN" >/dev/null 2>&1; then
+# Query a public resolver: the local one may hold a cached NXDOMAIN
+GOT=$(dig +short @8.8.8.8 "$DOMAIN" A | sort | tr '\n' ' ')
+if [ -z "$GOT" ]; then
   echo "  $DOMAIN does not resolve yet. Add the A records first and wait for propagation."
   exit 1
 fi
-host "$DOMAIN" | sed 's/^/  /'
+echo "  A records: $GOT"
 
 echo "$DOMAIN" > CNAME
 sed -i '' "s|^URL   = .*|URL   = \"https://$DOMAIN\"|" build.py
